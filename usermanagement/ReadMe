@@ -1,0 +1,82 @@
+# User Management API
+
+This Go project implements a simple RESTful API for user management, providing CRUD operations for user entities. You can choose between an in-memory user manager or an SQLite-backed user manager for persistent storage.
+
+## Features
+
+- Create a new user
+- Read user details
+- Update user information
+- Delete a user
+
+## Getting Started
+
+### Prerequisites
+
+- [Go](https://golang.org/) installed on your machine
+- (Optional) [SQLite](https://www.sqlite.org/) installed if using SQLiteUserManager
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/yourproject.git
+
+2. Navigate to the project directory:
+
+ ```bash
+    Copy code
+    cd yourproject
+    Choose the user manager implementation:
+
+For In-Memory User Manager:
+
+bash
+Copy code
+go mod tidy
+For SQLite User Manager:
+
+bash
+Copy code
+go mod tidy
+go build
+Usage
+Start the application:
+
+bash
+Copy code
+./yourproject
+The application will run on http://localhost:8080.
+
+Use a tool like curl or Postman to interact with the API endpoints.
+
+Create a user:
+
+bash
+Copy code
+curl -X POST -H "Content-Type: application/json" -d '{"name":"John Doe","email":"john.doe@example.com"}' http://localhost:8080/users
+Read user details:
+
+bash
+Copy code
+curl http://localhost:8080/users/1
+Update user information:
+
+bash
+Copy code
+curl -X PUT -H "Content-Type: application/json" -d '{"name":"Updated Name","email":"updated.email@example.com"}' http://localhost:8080/users/1
+Delete a user:
+
+bash
+Copy code
+curl -X DELETE http://localhost:8080/users/1
+Configuration
+To use the SQLite User Manager, the SQLite database file (sqlite.db) will be created in the project directory. You can modify the database configuration in pkg/user/sqlite_user_manager.go.
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+go
+Copy code
+
+Please make sure to replace placeholders like `yourusername` and `yourproject` with the actua

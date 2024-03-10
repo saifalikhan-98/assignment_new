@@ -1,0 +1,24 @@
+
+## Requirements
+
+1. Create a Redis instance to store a counter value.
+2. Implement two separate processes (or threads) that increment the counter value in Redis.
+3. Use a FIFO queue in Redis to manage the order of updates.
+4. Use RabbitMQ to send messages between the processes to coordinate the updates and manage the queue.
+5. Demonstrate how the race condition can lead to unexpected results (e.g., incorrect counter value) without proper queue management.
+
+### Bonus
+
+- Implement a locking mechanism using Redis to prevent the race condition.
+- Use RabbitMQ to notify other processes when the counter is successfully updated.
+- Implement error handling for failed updates to ensure data consistency.
+
+## Usage
+
+1. Install dependencies:
+
+   ```bash
+   npm install redis amqplib
+2. Run Redis and RabbitMQ on your machine.
+3. Run the application:
+   node src/redis-counter.js
